@@ -56,6 +56,7 @@ REFRESH_TTL=604800000
 REDIS_URL=redis://localhost:6379
 
 # Resend Email
+# Add the api key or the mail service won't work
 RESEND_API_KEY=your_resend_api_key
 ```
 
@@ -89,7 +90,7 @@ pnpm app:run
 
 this will start the app and the docker services:
 - visit http://localhost:3000/api for Swagger doc
-- You can also see the ***http** folder to test out the api
+- You can also see the **http** folder to test out the api
 
 
 
@@ -125,6 +126,7 @@ Email templates are HTML-based and sent via Resend. Includes:
 - Passwords hashed with bcrypt
 - Refesh Tokens hashed and stored securely in Redis with expiry
 - OTPs stored securely in Redis with expiry
+
 
 
 
