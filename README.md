@@ -62,7 +62,6 @@ RESEND_API_KEY=your_resend_api_key
 ### 3. Install the packages
 
 ```bash
-# Start the services and run the app
 pnpm install --frozen-lockfile
 ```
 
@@ -138,4 +137,5 @@ Email templates are HTML-based and sent via Resend. Includes:
 - Passwords hashed with bcrypt
 - Refesh Tokens hashed and stored securely in Redis with expiry
 - OTPs stored securely in Redis with expiry
+
 
