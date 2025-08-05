@@ -20,7 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "app:down": "docker compose down -v postgres redis",
     "app:up": "docker compose up -d postgres redis",
-    "app:run": "pnpm app:down && pnpm app:up && pnpm start:dev"
+    "app:run": "pnpm app:up && pnpm start:dev"
   },
   "dependencies": {
     "@nestjs-modules/ioredis": "^2.0.2",
