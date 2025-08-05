@@ -59,11 +59,11 @@ REDIS_URL=redis://localhost:6379
 RESEND_API_KEY=your_resend_api_key
 ```
 
-### 3. Run with Docker
+### 3. Run the project
 
 ```bash
-# Build and start the services
-docker compose up --build
+# Start the services and run the app
+pnpm app:run
 ```
 
 This will:
@@ -136,8 +136,10 @@ Email templates are HTML-based and sent via Resend. Includes:
 - Welcome email
 - OTP verification
 - Password reset OTP
+- Password reset successful
 
 ## 🛡️ Security
 
 - Passwords hashed with bcrypt
+- Refesh Tokens hashed and stored securely in Redis with expiry
 - OTPs stored securely in Redis with expiry
