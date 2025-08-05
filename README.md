@@ -117,7 +117,6 @@ src/
 
 Email templates are HTML-based and sent via Resend. Includes:
 
-- Welcome email
 - OTP verification
 - Password reset OTP
 - Password reset successful
@@ -127,6 +126,7 @@ Email templates are HTML-based and sent via Resend. Includes:
 - Passwords hashed with bcrypt
 - Refesh Tokens hashed and stored securely in Redis with expiry
 - OTPs stored securely in Redis with expiry
+
 
 
 
