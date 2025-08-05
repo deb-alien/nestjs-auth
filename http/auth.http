@@ -1,0 +1,60 @@
+### Sign Up
+POST http://localhost:3000/api/auth/sign-up
+Content-Type: application/json
+
+{
+  "email": "dev.rahim936@gmail.com",
+  "password": "P@ssw0rd",
+  "firstName": "Rahim",
+  "lastName": "Alin"
+}
+
+### Sign In
+POST http://localhost:3000/api/auth/sign-in
+Content-Type: application/json
+
+{
+  "email": "dev.rahim936@gmail.com",
+  "password": "P@$$w0rd"
+}
+
+### Refresh Token
+GET http://localhost:3000/api/auth/refresh
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyZmQ4Y2YxOC05MDU2LTRkNGEtOGFiNy1kMjY0MTIzZWMwNGEiLCJpYXQiOjE3NTQzODc0ODEsImV4cCI6MTc1NDk5MjI4MX0.Yu5XYBg2CGwPTKLRBKQ0lTXIgxVAO2HBJDc1TeEsI8E
+
+### Sign Out
+POST http://localhost:3000/api/auth/sign-out
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyZmQ4Y2YxOC05MDU2LTRkNGEtOGFiNy1kMjY0MTIzZWMwNGEiLCJpYXQiOjE3NTQzODczNzIsImV4cCI6MTc1NDQ3Mzc3Mn0.o0gDssno4PGNept0EITM6cIVZCuJiTfwApeHOfIvXY0
+
+### Verify Email OTP
+POST http://localhost:3000/api/auth/verify-email
+Content-Type: application/json
+
+{
+  "otp": ""
+}
+
+### Resend OTP
+PATCH http://localhost:3000/api/auth/resend-otp
+Content-Type: application/json
+
+{
+  "email": "dev.rahim936@gmail.com"
+}
+
+### Forgot Password
+POST http://localhost:3000/api/auth/forgot-password
+Content-Type: application/json
+
+{
+  "email": "dev.rahim936@gmail.com"
+}
+
+### Reset Password
+PATCH http://localhost:3000/api/auth/reset-password
+Content-Type: application/json
+
+{
+  "otp": "726082",
+  "newPassword": "P@$$w0rd"
+}
