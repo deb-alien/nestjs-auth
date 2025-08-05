@@ -59,17 +59,12 @@ REDIS_URL=redis://localhost:6379
 RESEND_API_KEY=your_resend_api_key
 ```
 
-### 3. Run the project
+### 3. Install the packages
 
 ```bash
 # Start the services and run the app
-pnpm app:run
+pnpm install --frozen-lockfile
 ```
-
-This will:
-
-- Start the NestJS app on http://localhost:3000
-- Start Redis and PostgreSQL containers
 
 ## 4. Use the API
 
@@ -143,3 +138,4 @@ Email templates are HTML-based and sent via Resend. Includes:
 - Passwords hashed with bcrypt
 - Refesh Tokens hashed and stored securely in Redis with expiry
 - OTPs stored securely in Redis with expiry
+
