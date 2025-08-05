@@ -5,8 +5,8 @@ A full-featured NestJS authentication system with email-based OTP verification u
 ## 🚀 Features
 
 - Signup with email and password
-- Email OTP verification (Redis-backed, 30 min expiry and rate limiting 5 request per 1 hour)
-- Resend OPT for verification
+- Email OTP verification (Redis-backed, 30 min expiry)
+- Resend OPT for verification (rate limiting 5 request per 1 hour)
 - Login & Logout (with HTTP-only cookies)
 - Forgot and Reset password
 - Dockerized setup with PostgreSQL and Redis
@@ -127,6 +127,7 @@ Email templates are HTML-based and sent via Resend. Includes:
 - Passwords hashed with bcrypt
 - Refesh Tokens hashed and stored securely in Redis with expiry
 - OTPs stored securely in Redis with expiry
+
 
 
 
