@@ -59,7 +59,7 @@ REDIS_URL=redis://localhost:6379
 RESEND_API_KEY=your_resend_api_key
 ```
 
-### 3. Install the packages
+## 3. Install the packages
 
 ```bash
 pnpm install --frozen-lockfile
@@ -80,35 +80,23 @@ Use an API tool like Postman or Thunder Client to call the following routes:
 | POST   | /auth/forgot-password | Send reset OTP    |
 | PATCH  | /auth/reset-password  | Reset password    |
 
-## 🧪 Dev Commands
-
-```bash
-# Start dev server
-pnpm start:dev
-
-# Run tests
-pnpm test
-
-# Format code
-pnpm format
-
-# Lint code
-pnpm lint
-```
-
-## 🐳 Docker Commands
+## Run the app
 
 ```bash
 # Start app + services
-pnpm app:up
-
-# Stop all containers
-pnpm app:down
+pnpm app:run
 ```
+
+this will start the app and the docker services:
+- visit http://localhost:3000/api for Swagger doc
+- You can also see the ***http** folder to test out the api
+
+
 
 ## 📂 Project Structure
 
 ```
+http/
 src/
 ├── auth/
 │   ├── dto/
@@ -137,5 +125,6 @@ Email templates are HTML-based and sent via Resend. Includes:
 - Passwords hashed with bcrypt
 - Refesh Tokens hashed and stored securely in Redis with expiry
 - OTPs stored securely in Redis with expiry
+
 
 
