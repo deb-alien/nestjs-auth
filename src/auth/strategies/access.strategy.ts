@@ -9,7 +9,7 @@ export class AccessStrategy extends PassportStrategy(Strategy, 'access') {
   constructor(private readonly config: ConfigService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: config.get('ACCESS_SECRET') as string,
+      secretOrKey: config.get<string>('ACCESS_SECRET') as string,
     });
   }
 
