@@ -5,8 +5,10 @@ A full-featured NestJS authentication system with email-based OTP verification u
 ## 🚀 Features
 
 - Signup with email and password
-- Email OTP verification (Redis-backed, 15 min expiry)
-- Login & Logout (with HTTP-only cookies)
+- Email OTP verification (Redis-backed, 30 min expiry)
+- Resend OPT for verification (5 per hour per email rate limit)
+- Login & Logout
+- JWT Access and Refresh Token
 - Forgot and Reset password
 - Dockerized setup with PostgreSQL and Redis
 - Email sending via Resend
@@ -56,20 +58,15 @@ REFRESH_TTL=604800000
 REDIS_URL=redis://localhost:6379
 
 # Resend Email
+# Add the api key or the mail service won't work
 RESEND_API_KEY=your_resend_api_key
 ```
 
-### 3. Run the project
+## 3. Install the packages
 
 ```bash
-# Start the services and run the app
-pnpm app:run
+pnpm install --frozen-lockfile
 ```
-
-This will:
-
-- Start the NestJS app on http://localhost:3000
-- Start Redis and PostgreSQL containers
 
 ## 4. Use the API
 
@@ -86,35 +83,23 @@ Use an API tool like Postman or Thunder Client to call the following routes:
 | POST   | /auth/forgot-password | Send reset OTP    |
 | PATCH  | /auth/reset-password  | Reset password    |
 
-## 🧪 Dev Commands
-
-```bash
-# Start dev server
-pnpm start:dev
-
-# Run tests
-pnpm test
-
-# Format code
-pnpm format
-
-# Lint code
-pnpm lint
-```
-
-## 🐳 Docker Commands
+## Run the app
 
 ```bash
 # Start app + services
-pnpm app:up
-
-# Stop all containers
-pnpm app:down
+pnpm app:run
 ```
+
+this will start the app and the docker services:
+- visit http://localhost:3000/api for Swagger doc
+- You can also see the **http** folder to test out the api
+
+
 
 ## 📂 Project Structure
 
 ```
+http/
 src/
 ├── auth/
 │   ├── dto/
@@ -133,7 +118,6 @@ src/
 
 Email templates are HTML-based and sent via Resend. Includes:
 
-- Welcome email
 - OTP verification
 - Password reset OTP
 - Password reset successful
@@ -143,3 +127,14 @@ Email templates are HTML-based and sent via Resend. Includes:
 - Passwords hashed with bcrypt
 - Refesh Tokens hashed and stored securely in Redis with expiry
 - OTPs stored securely in Redis with expiry
+
+
+
+
+
+
+
+
+
+
+
